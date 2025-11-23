@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Policy Bodyguard</title>
+  <style>
+    /* Modern, Clean Design */
+    body { 
+      width: 350px; 
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+      padding: 0; margin: 0; 
+      background-color: #f8f9fa; 
+      color: #333;
+    }
+
+    header {
+      background: #222; 
+      color: white; 
+      padding: 15px; 
+      text-align: center;
+    }
+    
+    h1 { margin: 0; font-size: 16px; letter-spacing: 1px; text-transform: uppercase; }
+
+    /* The Score Section (Kept smaller) */
+    .score-section {
+      background: white;
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .score-badge {
+      font-size: 24px; 
+      font-weight: bold; 
+      padding: 5px 15px; 
+      border-radius: 20px;
+      color: white;
+    }
+    .bg-green { background-color: #28a745; }
+    .bg-orange { background-color: #fd7e14; }
+    .bg-red { background-color: #dc3545; }
+
+    /* The Fault List */
+    #results-container { padding: 15px; display: none; }
+    
+    h2 { font-size: 14px; color: #666; margin-bottom: 10px; text-transform: uppercase; }
+
+    /* Individual Fault Cards */
+    .fault-card {
+      background: #fff;
+      border-left: 5px solid #dc3545; /* Red line on left */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      margin-bottom: 12px;
+      padding: 12px;
+      border-radius: 4px;
+    }
+
+    .fault-title { font-weight: bold; font-size: 13px; margin-bottom: 5px; color: #dc3545; }
+    .fault-desc { font-size: 12px; color: #555; line-height: 1.4; }
+
+    /* Safe State */
+    .safe-state {
+      text-align: center;
+      padding: 30px;
+      color: #28a745;
+    }
+
+    /* Loading & Button */
+    .controls { padding: 15px; }
+    button {
+      width: 100%; padding: 12px; 
+      background: #222; color: white; 
+      border: none; border-radius: 6px; 
+      font-weight: bold; cursor: pointer;
+    }
+    button:hover { background: #444; }
+    #loading { display: none; text-align: center; padding: 20px; color: #666; }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>⚖️ Policy Bodyguard</h1>
+  </header>
+
+  <div class="controls" id="start-screen">
+    <p style="font-size: 13px; text-align: center; color: #666; margin-bottom: 15px;">
+      Scan this page for hidden traps, forced arbitration, and data selling.
+    </p>
+    <button id="analyzeBtn">SCAN PAGE NOW</button>
+  </div>
+
+  <div id="loading">
+    <p>🔍 Reading Fine Print...</p>
+    <img src="https://i.gifer.com/ZKZg.gif" width="30" style="margin-top:10px; opacity:0.5;">
+  </div>
+
+  <div id="results-container">
+    
+    <div class="score-section">
+      <div style="text-align: right;">
+        <div style="font-size: 12px; color: #888;">Safety Score</div>
+        <div id="score-text" style="font-weight: bold;">-</div>
+      </div>
+      <div id="score-badge" class="score-badge">-</div>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
+    <div id="faults-list">
+      </div>
+
+    <div id="safe-message" class="safe-state" style="display:none;">
+      <div style="font-size: 40px;">🛡️</div>
+      <h3>No Red Flags Found</h3>
+      <p style="font-size: 12px; color: #666;">This policy appears to respect the standard user constitution.</p>
+    </div>
+
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
