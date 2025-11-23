@@ -29,9 +29,9 @@ This project uses a **Client-Server** architecture to overcome browser limitatio
 ```mermaid
 graph LR
     %% Styles
-    classDef client fill:#b2ebf2,stroke:#00838f,stroke-width:2px;
-    classDef server fill:#fff9c4,stroke:#ff6f00,stroke-width:2px;
-    classDef ai fill:#e1bee7,stroke:#6a1b9a,stroke-width:2px;
+    classDef client fill:#b2ebf2,stroke:#00838f,stroke-width:2px,color:#000;
+    classDef server fill:#fff9c4,stroke:#ff6f00,stroke-width:2px,color:#000;
+    classDef ai fill:#e1bee7,stroke:#6a1b9a,stroke-width:2px,color:#000;
 
     subgraph Browser [Chrome Extension]
         User((User)) -->|Clicks Scan| Ext[Popup UI]
